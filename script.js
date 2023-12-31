@@ -1,6 +1,10 @@
+function randRange(low, high) {
+    return Math.floor(Math.random() * high);
+}
+
 function constructGrid(gridSize) {
     const grid = document.createElement("div");
-    let boxSize = gridContainer.offsetWidth/gridSize;
+    let boxSize = (gridContainer.offsetWidth-20)/gridSize;
 
     grid.className = "grid";
     for (let i = 0; i < gridSize; i++) {
@@ -11,8 +15,10 @@ function constructGrid(gridSize) {
             box.className = "gridbox";
             box.style.width = boxSize + "px";
             box.style.height = boxSize + "px";
-            box.style.backgroundColor = "black";
+            box.style.backgroundColor = "white";
+            box.draggable = false;
             box.addEventListener("mouseenter", colorBox);
+            box.addEventListener("click", colorBox);
             row.appendChild(box);
         }
         grid.appendChild(row);
@@ -21,7 +27,13 @@ function constructGrid(gridSize) {
 }
 
 function colorBox(event) {
-    event.target.style.backgroundColor = "red";
+    if (event.which !== 1) return;
+    if (document.querySelector(".rgb").checked) {
+        event.target.style.backgroundColor = "rgb(" + randRange(0, 256) + ", " + randRange(0, 256) + ", " + randRange(0, 256) + ")";
+    } else {
+        event.target.style.backgroundColor = "black";
+        event.target.style.opacity = +event.target.style.opacity + 0.1;
+    }
 }
 
 function changeGrid(event) {

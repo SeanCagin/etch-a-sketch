@@ -9,4 +9,14 @@
 .gridContainer {
   height: 500px;
   width: 500px;
+  border: 10px solid blue;
+}
+
+.pageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.gridbox {
+  user-select: none;
 }
