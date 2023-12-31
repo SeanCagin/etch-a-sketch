@@ -30,6 +30,7 @@ function colorBox(event) {
     if (event.which !== 1) return;
     if (document.querySelector(".rgb").checked) {
         event.target.style.backgroundColor = "rgb(" + randRange(0, 256) + ", " + randRange(0, 256) + ", " + randRange(0, 256) + ")";
+        event.target.style.opacity = "1";
     } else {
         event.target.style.backgroundColor = "black";
         event.target.style.opacity = +event.target.style.opacity + 0.1;
