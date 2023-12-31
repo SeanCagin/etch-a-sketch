@@ -4,8 +4,9 @@
 
 .gridbox {
   background-color: black;
-  width: 16px;
-  height: 16px;
-  border: 2px solid aliceblue;
-  flex-grow: 0;
+}
+
+.gridContainer {
+  height: 500px;
+  width: 500px;
 }
