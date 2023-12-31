@@ -1,0 +1,11 @@
+.gridrow {
+  display: flex;
+}
+
+.gridbox {
+  background-color: black;
+  width: 16px;
+  height: 16px;
+  border: 2px solid aliceblue;
+  flex-grow: 0;
+}
